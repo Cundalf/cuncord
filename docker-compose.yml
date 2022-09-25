@@ -9,4 +9,4 @@ services:
     restart: unless-stopped
     tty: true
     volumes: 
-      - "audio:audio"
+      - "./audio:/audio"
