@@ -16,15 +16,6 @@ export default class DiscordClient {
             ],
             partials: [Partials.Channel]
         });
-
-        console.log([
-            GatewayIntentBits.DirectMessages,
-            GatewayIntentBits.Guilds,
-            GatewayIntentBits.GuildBans,
-            GatewayIntentBits.GuildMessages,
-            GatewayIntentBits.MessageContent,
-            GatewayIntentBits.GuildVoiceStates
-        ]);
     }
 
     public static getInstance(): DiscordClient {
