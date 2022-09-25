@@ -23,6 +23,10 @@ export default class RecommendationCommand extends BaseCommand {
         {
             name: 'This is Symphonic... Senpai!',
             link: 'https://open.spotify.com/playlist/6hH82SdAkARDY2NRKoTEf3?si=10cf6d4835284a21'
+        },
+        {
+            name: 'Rock \'n\' Roll Racing Soundtrack',
+            link: 'https://open.spotify.com/playlist/0TdfOU9QLqRUFNgl3FZ31k?si=8746f2915e2c4911'
         }
     ];
 
