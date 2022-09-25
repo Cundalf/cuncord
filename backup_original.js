@@ -29,9 +29,9 @@ client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
 	const { commandName } = interaction;
-
+	
 	if (commandName === 'ping') {
-		await interaction.reply('Pong!');
+		await interaction.reply('interactionCreate Pong!');
 	} else if (commandName === 'server') {
 		await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
 	} else if (commandName === 'user') {
@@ -51,6 +51,7 @@ client.on('messageCreate', async (message) => {
 	const guildQueue = player.getQueue(message.guild.id);
 
 	if (command === 'play') {
+		console.log(message.guild.id);
 		const queue = player.createQueue(message.guild.id);
 		await queue.join(message.member.voice.channel);
 		const song = await queue.play(args.join(' ')).catch(err => {
