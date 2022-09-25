@@ -6,7 +6,6 @@ import path from 'path';
 export default class PlayAudioCommand extends BaseCommand {
     private readonly commands = new Map<string, string>();
     private readonly audioPlayer: AudioPlayer;
-    private readonly subscriptionTimeout = 3_000;
 
     constructor() {
         super();
@@ -49,7 +48,7 @@ export default class PlayAudioCommand extends BaseCommand {
                 setTimeout(() => {
                     subscription.unsubscribe();
                     voiceChannelConnection.destroy();
-                }, this.subscriptionTimeout);
+                }, 5_000);
             }
         } catch (err) {
             console.log(err);
