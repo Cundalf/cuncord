@@ -7,4 +7,4 @@ COPY . .
 
 RUN yarn install --production && npx tsc
 
-CMD ["node", "./dist/index.js"]
+CMD ["npm", "run", "prod"]

@@ -1,5 +1,4 @@
 import { Client } from 'discord.js';
-import dotenv from 'dotenv';
 import Invoker from './commands/invoker';
 import DiscordClient from './models/discordClient';
 import sourceMapSupport from 'source-map-support';
@@ -7,8 +6,6 @@ import sourceMapSupport from 'source-map-support';
 sourceMapSupport.install();
 
 (async () => {
-    dotenv.config();
-
     const discordClient: Client = DiscordClient.getInstance().getDiscordClient();
 
     discordClient.once('ready', () => console.log('Discord Client Ready!'));

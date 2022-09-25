@@ -1,7 +1,4 @@
 import { REST, Routes, SlashCommandBuilder } from 'discord.js';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 if (process.env.DISCORD_TOKEN == null || process.env.DISCORD_CLIENT_ID == null || process.env.DISCORD_GUILD_ID == null) {
     throw new Error('Discord configuration not set');
