@@ -25,7 +25,8 @@ const commands = [
     new SlashCommandBuilder().setName('nowplaying').setDescription('Send current song info to chat'),
     new SlashCommandBuilder().setName('getqueue').setDescription('Send current queue to chat'),
     new SlashCommandBuilder().setName('clearqueue').setDescription('Clear current queue'),
-    new SlashCommandBuilder().setName('recommendation').setDescription('Playlist recommendations')
+    new SlashCommandBuilder().setName('recommendation').setDescription('Playlist recommendations'),
+    new SlashCommandBuilder().setName('shuffle').setDescription('Shuffle :$')
 ]
     .map(command => command.toJSON());
 
