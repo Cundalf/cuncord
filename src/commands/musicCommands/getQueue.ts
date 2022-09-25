@@ -14,7 +14,18 @@ export default class GetQueueCommand extends BaseCommand {
             const guildQueue = player.getQueue(guild.id);
 
             if (guildQueue) {
-                await interaction.reply('I haven\'t developed this command yet, Onii Chan :(');
+                const songs = guildQueue.songs;
+                let msg = 'I haven\'t finished this command yet, onii-chan :(\nThe next 5 songs in the queue are:\n\n';
+
+                for (let i = 0; i < songs.length; i++) {
+                    msg += `${i + 1}. *${songs[i].name}* By *${songs[i].author}*\n`
+
+                    if (i >= 4) {
+                        break;
+                    }
+                }
+
+                await interaction.reply(msg);
             } else {
                 await interaction.reply('mmm...');
             }
