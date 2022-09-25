@@ -15,20 +15,16 @@ export default class PlaylistCommand extends BaseCommand {
             const queue = player.createQueue(guild.id);
             const playlist = interaction.options.getString('playlist') as string;
 
+            await interaction.reply('Adding... Please, wait Senpai :(');
             await queue.join(guildMember.voice.channel as VoiceBasedChannel);
-            const playlistInQueue = await queue.playlist(playlist).catch(err => {
-                console.log(err);
-                if (!guildQueue) {
-                    queue.stop();
-                }
-            });
-
-            await interaction.reply('Adding... Wait please senpai :(');
-
-            // if (playlistInQueue) {
-            // console.log(playlistInQueue);
-            //    await interaction.reply('Adding... Wait please senpai :(');
-            // }
+            // const playlistInQueue =
+            await queue.playlist(playlist)
+                .catch(err => {
+                    console.log(err);
+                    if (!guildQueue) {
+                        queue.stop();
+                    }
+                });
         }
     }
 }
