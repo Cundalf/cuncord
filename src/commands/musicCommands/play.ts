@@ -10,10 +10,10 @@ export default class PlayCommand extends BaseCommand {
         const guildMember: GuildMember = interaction.member as GuildMember;
         const guild: Guild = guildMember.guild;
 
-        if (guild !== null && guildMember !== null) {
+        if (guild && guildMember) {
             const guildQueue = player.getQueue(guild.id);
             const queue = player.createQueue(guild.id);
-            const play = interaction.options.getString('play') as string;
+            const play = interaction.options.getString('song') as string;
 
             await queue.join(guildMember.voice.channel as VoiceBasedChannel);
             const songInQueue = await queue.play(play).catch(err => {
@@ -22,7 +22,12 @@ export default class PlayCommand extends BaseCommand {
                     queue.stop();
                 }
             });
-            // console.log(songInQueue);
+
+            if (songInQueue) {
+                const author = `**By:** *${songInQueue.author}*`;
+                const songResponse = `**Adding:** *${songInQueue.name}*\n${author}`;
+                await interaction.reply(songResponse);
+            }
         }
     }
 }

@@ -20,8 +20,15 @@ const commands = [
             { name: 'BekerLaConchaDeTuMadre', value: 'lcdtm' },
             { name: 'MaxiDBD', value: 'dbd' },
             { name: 'CundaCerraElOrto', value: 'orto' }
-        ))
-
+        )),
+    new SlashCommandBuilder().setName('stop').setDescription('Stop music'),
+    new SlashCommandBuilder().setName('skip').setDescription('Skip current song'),
+    new SlashCommandBuilder().setName('resume').setDescription('Resume music'),
+    new SlashCommandBuilder().setName('pause').setDescription('Pause music'),
+    new SlashCommandBuilder().setName('nowplaying').setDescription('Send current song info in chat'),
+    new SlashCommandBuilder().setName('getqueue').setDescription('WIP'),
+    new SlashCommandBuilder().setName('clearqueue').setDescription('Clear current queue'),
+    new SlashCommandBuilder().setName('recommendation').setDescription('Playlist recommendations')
 ]
     .map(command => command.toJSON());
 

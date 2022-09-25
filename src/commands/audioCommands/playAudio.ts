@@ -44,6 +44,7 @@ export default class PlayAudioCommand extends BaseCommand {
 
             if (subscription) {
                 this.audioPlayer.play(audioResource);
+                await interaction.reply('( ͡° ͜ʖ ͡°)');
 
                 setTimeout(() => {
                     subscription.unsubscribe();
