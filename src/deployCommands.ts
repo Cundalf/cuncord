@@ -28,7 +28,7 @@ const mainCommands = [
     .map(command => command.toJSON());
 
 const audioCommands = [
-    new SlashCommandBuilder().setName('play').setDescription('Play predefined audio')
+    new SlashCommandBuilder().setName('audio').setDescription('Play predefined audio')
         .addStringOption(option => option.setName('audio').setDescription('Audio request').setRequired(true).addChoices(
             { name: 'AltiriamLaPutaMadre', value: 'lpm' },
             { name: 'BekerLaConchaDeTuMadre', value: 'lcdtm' },
@@ -42,10 +42,10 @@ let rest = new REST({ version: '10' }).setToken(process.env.MAIN_DISCORD_TOKEN);
 
 rest.put(Routes.applicationGuildCommands(process.env.MAIN_DISCORD_CLIENT_ID, process.env.DISCORD_GUILD_ID), { body: mainCommands })
     .then((data) => console.log('Successfully registered application commands.'))
-    .catch(console.error)
+    .catch(console.error);
 
 rest = new REST({ version: '10' }).setToken(process.env.AUDIO_DISCORD_TOKEN);
 
 rest.put(Routes.applicationGuildCommands(process.env.AUDIO_DISCORD_CLIENT_ID, process.env.DISCORD_GUILD_ID), { body: audioCommands })
     .then((data) => console.log('Successfully registered application commands.'))
-    .catch(console.error)
+    .catch(console.error);

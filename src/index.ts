@@ -33,8 +33,8 @@ sourceMapSupport.install();
     mainClient.on('interactionCreate', async interaction => await executeCommandFromInteraction(interaction));
     audioClient.on('interactionCreate', async interaction => await executeCommandFromInteraction(interaction));
 
-    await mainClient.login(process.env.DISCORD_TOKEN);
-    await audioClient.login(process.env.DISCORD_TOKEN);
+    await mainClient.login(process.env.MAIN_DISCORD_TOKEN);
+    await audioClient.login(process.env.AUDIO_DISCORD_TOKEN);
 })().catch(e => {
     console.error('Critical error!!!!', e);
 });

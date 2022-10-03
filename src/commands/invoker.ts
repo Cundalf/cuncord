@@ -23,7 +23,7 @@ export default class Invoker {
         this.commands.set('server', new ServerCommand());
         this.commands.set('play', new PlayCommand());
         this.commands.set('playlist', new PlaylistCommand());
-        this.commands.set('playaudio', new PlayAudioCommand());
+        this.commands.set('audio', new PlayAudioCommand());
         this.commands.set('stop', new StopCommand());
         this.commands.set('skip', new SkipCommand());
         this.commands.set('resume', new ResumeCommand());
@@ -41,6 +41,8 @@ export default class Invoker {
         if (this.commands.has(commandName)) {
             const commandToExecute: BaseCommand = this.commands.get(commandName) as BaseCommand;
             await commandToExecute.execute(interaction);
+        } else {
+            await interaction.reply('WTF???');
         }
     }
 }
