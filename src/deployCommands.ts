@@ -33,7 +33,10 @@ const audioCommands = [
             { name: 'AltiriamLaPutaMadre', value: 'lpm' },
             { name: 'BekerLaConchaDeTuMadre', value: 'lcdtm' },
             { name: 'MaxiDBD', value: 'dbd' },
-            { name: 'CundaCerraElOrto', value: 'orto' }
+            { name: 'CundaCerraElOrto', value: 'orto' },
+            { name: 'RandomTrolazo', value: 'trolazo' },
+            { name: 'TodosEstaBien', value: 'estabien' },
+            { name: 'TodosNo', value: 'no' }
         ))
 ]
     .map(command => command.toJSON());

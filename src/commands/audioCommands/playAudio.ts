@@ -67,6 +67,9 @@ export default class PlayAudioCommand extends BaseCommand {
         this.commands.set('lcdtm', path.resolve(__dirname, '../../../audio', 'laconchadetumadre.mp3'));
         this.commands.set('dbd', path.resolve(__dirname, '../../../audio', 'dbd.mp3'));
         this.commands.set('orto', path.resolve(__dirname, '../../../audio', 'cerraelorto.mp3'));
+        this.commands.set('estabien', path.resolve(__dirname, '../../../audio', 'estabien.mp3'));
+        this.commands.set('no', path.resolve(__dirname, '../../../audio', 'no.mp3'));
+        this.commands.set('trolazo', path.resolve(__dirname, '../../../audio', 'trolazo.mp3'));
     }
 
     private connectToAudioVoice(interaction: ChatInputCommandInteraction): VoiceConnection | null {
