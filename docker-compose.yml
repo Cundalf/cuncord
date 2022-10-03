@@ -3,8 +3,10 @@ services:
     container_name: cuncord_bot
     image: cuncord
     environment:
-      DISCORD_TOKEN: "TOKEN"
-      DISCORD_CLIENT_ID: "CLIENT"
+      MAIN_DISCORD_TOKEN: "TOKEN"
+      MAIN_DISCORD_CLIENT_ID: "CLIENT"
+      AUDIO_DISCORD_TOKEN: "TOKEN"
+      AUDIO_DISCORD_CLIENT_ID: "CLIENT"
       DISCORD_GUILD_ID: "GUILD"
     restart: unless-stopped
     tty: true
