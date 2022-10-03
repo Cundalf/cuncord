@@ -1,6 +1,6 @@
 import { Player } from 'discord-music-player';
 import { Client } from 'discord.js';
-import DiscordClient from './discordClient';
+import ClientsManager from './clientsManager';
 
 export default class MusicPlayer {
     private static instance: MusicPlayer;
@@ -8,7 +8,7 @@ export default class MusicPlayer {
     private readonly discordClient: Client;
 
     private constructor() {
-        this.discordClient = DiscordClient.getInstance().getDiscordClient();
+        this.discordClient = ClientsManager.getInstance().getMainClient();
 
         this.player = new Player(this.discordClient, {
             leaveOnEmpty: false
