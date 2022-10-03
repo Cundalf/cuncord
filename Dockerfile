@@ -5,6 +5,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN yarn install --production && npx tsc
+RUN yarn install --production
 
 CMD ["npm", "run", "prod"]
