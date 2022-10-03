@@ -3,6 +3,8 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
+RUN rm -rf ./dist/
+
 COPY . .
 
 RUN yarn install --production
