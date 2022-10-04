@@ -23,7 +23,8 @@ const mainCommands = [
     new SlashCommandBuilder().setName('getqueue').setDescription('Send current queue to chat'),
     new SlashCommandBuilder().setName('clearqueue').setDescription('Clear current queue'),
     new SlashCommandBuilder().setName('recommendation').setDescription('Playlist recommendations'),
-    new SlashCommandBuilder().setName('shuffle').setDescription('Shuffle :$')
+    new SlashCommandBuilder().setName('shuffle').setDescription('Shuffle :$'),
+    new SlashCommandBuilder().setName('crypto').setDescription('Send crypto value information')
 ]
     .map(command => command.toJSON());
 

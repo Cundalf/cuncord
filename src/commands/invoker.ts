@@ -14,6 +14,7 @@ import GetQueueCommand from './musicCommands/getQueue';
 import ClearQueueCommand from './musicCommands/clearQueue';
 import RecommendationCommand from './musicCommands/recommendation';
 import ShuffleCommand from './musicCommands/shuffle';
+import CryptoCommand from './cryptoCommands/crypto';
 
 export default class Invoker {
     private readonly commands = new Map<string, BaseCommand>();
@@ -33,6 +34,7 @@ export default class Invoker {
         this.commands.set('clearqueue', new ClearQueueCommand());
         this.commands.set('recommendation', new RecommendationCommand());
         this.commands.set('shuffle', new ShuffleCommand());
+        this.commands.set('crypto', new CryptoCommand());
     }
 
     async executeCommand(interaction: ChatInputCommandInteraction): Promise<void> {
