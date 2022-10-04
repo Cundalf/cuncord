@@ -53,7 +53,7 @@ export default class CryptoCommand extends BaseCommand {
             reply += `**Current:** ${culoCoinCurrentArs} ((USD) ${culoCoinCurrentDollar})\n`;
             reply += `**Original:** ${culoCoinOriginalArs} ((USD) ${culoCoinOriginalDollar} // Ref: (USD) ${culoCoinDollarRef})\n`;
             reply += '----------\n';
-            reply += ':coin: **CuloCoin**\n';
+            reply += ':coin: **ObraSocialCoin**\n';
             reply += `**Current:** ${osCurrentArs} ((USD) ${osCurrentDollar})\n`;
             reply += `**Original:** ${osOriginalArs} ((USD) ${osOriginalDollar} // Ref: (USD) ${osDollarRef})\n`;
             reply += '----------\n';
