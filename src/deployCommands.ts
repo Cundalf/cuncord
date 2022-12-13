@@ -37,7 +37,14 @@ const audioCommands = [
             { name: 'CundaCerraElOrto', value: 'orto' },
             { name: 'RandomTrolazo', value: 'trolazo' },
             { name: 'TodosEstaBien', value: 'estabien' },
-            { name: 'TodosNo', value: 'no' }
+            { name: 'TodosNo', value: 'no' },
+            { name: 'AwitaPelotudito', value: 'pelotudito' },
+            { name: 'AwitaCalor', value: 'awitacalor' },
+            { name: 'BekerCalor', value: 'bekercalor' },
+            { name: 'BekerPurpleRain', value: 'purplerain' },
+            { name: 'BekerReLocoFulbo', value: 'fulbo' },
+            { name: 'FacuLlanto', value: 'llanto' },
+            { name: 'BekerGrito', value: 'bekergrito' }
         ))
 ]
     .map(command => command.toJSON());

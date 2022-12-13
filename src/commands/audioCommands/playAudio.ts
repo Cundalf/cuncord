@@ -70,6 +70,13 @@ export default class PlayAudioCommand extends BaseCommand {
         this.commands.set('estabien', path.resolve(__dirname, '../../../audio', 'estabien.mp3'));
         this.commands.set('no', path.resolve(__dirname, '../../../audio', 'no.mp3'));
         this.commands.set('trolazo', path.resolve(__dirname, '../../../audio', 'trolazo.mp3'));
+        this.commands.set('awitacalor', path.resolve(__dirname, '../../../audio', 'AwitaCalor.mp3'));
+        this.commands.set('pelotudito', path.resolve(__dirname, '../../../audio', 'AwitaPelotudito.mp3'));
+        this.commands.set('bekercalor', path.resolve(__dirname, '../../../audio', 'BekerCalor.mp3'));
+        this.commands.set('bekergrito', path.resolve(__dirname, '../../../audio', 'BekerGrito1.mp3'));
+        this.commands.set('purplerain', path.resolve(__dirname, '../../../audio', 'BekerPurpleRain.mp3'));
+        this.commands.set('fulbo', path.resolve(__dirname, '../../../audio', 'BekerReLocoFulbo.mp3'));
+        this.commands.set('llanto', path.resolve(__dirname, '../../../audio', 'FacuLlanto.mp3'));
     }
 
     private connectToAudioVoice(interaction: ChatInputCommandInteraction): VoiceConnection | null {
