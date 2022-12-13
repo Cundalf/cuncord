@@ -14,19 +14,30 @@ export default class PlayCommand extends BaseCommand {
             const guildQueue = player.getQueue(guild.id);
             const queue = player.createQueue(guild.id);
             const play = interaction.options.getString('song') as string;
+            const channel = interaction.channel;
 
-            await queue.join(guildMember.voice.channel as VoiceBasedChannel);
-            const songInQueue = await queue.play(play).catch(err => {
-                console.log(err);
-                if (!guildQueue) {
-                    queue.stop();
+            try {
+                await interaction.reply('I\'m looking for the song, bear with me :point_right::skin-tone-1: :point_left::skin-tone-1:');
+
+                await queue.join(guildMember.voice.channel as VoiceBasedChannel);
+
+                const songInQueue = await queue.play(play).catch(err => {
+                    console.log(err);
+                    if (!guildQueue) {
+                        queue.stop();
+                    }
+                });
+
+                if (songInQueue) {
+                    const author = `**By:** *${songInQueue.author}*`;
+                    const songResponse = `**Adding:** *${songInQueue.name}*\n${author}`;
+
+                    if (channel !== null) {
+                        await channel.send(songResponse);
+                    }
                 }
-            });
-
-            if (songInQueue) {
-                const author = `**By:** *${songInQueue.author}*`;
-                const songResponse = `**Adding:** *${songInQueue.name}*\n${author}`;
-                await interaction.reply(songResponse);
+            } catch (err) {
+                console.log(err);
             }
         }
     }
